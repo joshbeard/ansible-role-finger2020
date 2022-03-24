@@ -1,0 +1,4 @@
+# Ansible role for managing the deployment of Finger2020
+- include_tasks: pre.yml
+- include_tasks: install.yml
+- include_tasks: config.yml

@@ -1,0 +1,26 @@
+# Ansible Role: Finger2020
+# Installation
+- name: Finger2020 | Clone Git Repository
+  ansible.builtin.git:
+    repo: "{{ finger_src_repo }}"
+    dest: "{{ finger_src_dir }}"
+    version: "{{ finger_src_ref }}"
+    clone: yes
+    update: yes
+  register: clone
+
+- name: Finger2020 | Manage Config Directory
+  ansible.builtin.file:
+    state: directory
+    path: "{{ finger_dir }}"
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Finger2020 | Run Install
+  ansible.builtin.command: "{{ finger_src_dir }}/install.sh"
+  args:
+    chdir: "{{ finger_src_dir }}"
+    creates: "/usr/bin/finger2020"
+  when: clone.changed
+

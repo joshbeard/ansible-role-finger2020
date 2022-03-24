@@ -1,0 +1,7 @@
+# Ansible Role: Finger2020
+# Prerequisites
+- name: Install Git
+  ansible.builtin.package:
+    name: git
+    state: present
+  when: finger_install_git is true

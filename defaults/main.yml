@@ -1,0 +1,31 @@
+# A string that will represent the user's finger name. This can be any arbitrary
+# value and does not need to correspond to a real user on the system.
+finger_name: ''
+
+# Absolute path to the directory containing the finger2020 content files,
+# including the contact, plan, and project files.
+finger_dir: /etc/finger
+
+# Absolute path to the 'env' file for configuring finger2020
+finger_sysconfig: /etc/sysconfig/finger2020.env
+
+# The URL for a Git repository to download for the finger2020 installation
+finger_src_repo: https://github.com/michael-lazar/finger2020.git
+
+# The Git ref (commit hash, branch, tag) to clone
+finger_src_ref: 4c1c8785cadbac7f9e454536ab230887ae6b4705
+
+# The absolute path to where the Git repository should be cloned/cached
+finger_src_dir: /var/cache/finger2020
+
+# The location of the source templates.
+# By default, these include the files in this role.
+# Use something like "{{ playbook_dir }}/files/contact.xt" for local
+# overrides.
+finger_contact_template_src: contact.txt
+finger_plan_template_src: plan.txt
+finger_project_template_src: project.txt
+
+# Toggles the task that ensures the 'git' package is installed, which is
+# required for cloning the Finger2020 repository.
+finger_install_git: true

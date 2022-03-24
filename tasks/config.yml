@@ -1,0 +1,33 @@
+# Ansible Role: Finger2020
+# Configuration
+- name: Finger2020 | Manage Contact File
+  ansible.builtin.template:
+    src: "{{ finger_contact_template_src }}"
+    dest: "{{ finger_dir }}/contact.txt"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Finger2020 | Manage Project File
+  ansible.builtin.template:
+    src: "{{ finger_project_template_src }}"
+    dest: "{{ finger_dir }}/project.txt"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Finger2020 | Manage Plan file
+  ansible.builtin.template:
+    src: "{{ finger_plan_template_src }}"
+    dest: "{{ finger_dir }}/plan.txt"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Finger2020 | Systemd Socket Configuration
+  ansible.builtin.template:
+    src: finger2020.env
+    dest: "{{ finger_sysconfig }}"
+    owner: root
+    group: root
+    mode: '0755'
