@@ -24,15 +24,6 @@ about _finger_.
 
 Refer to [defaults/main.yml](defaults/main.yml).
 
-### gopher_hosts
-
-Required list of hosts to serve.
-
-This sets the `-h` argument and creates content directories.
-
-Default: _none_
-Configures the Systemd service/socket
-
 ### finger_name
 
 Required string that will represent the user's finger name. This can be any
