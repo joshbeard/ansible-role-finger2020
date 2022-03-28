@@ -25,6 +25,7 @@ finger_src_dir: /var/cache/finger2020
 finger_contact_template_src: contact.txt
 finger_plan_template_src: plan.txt
 finger_project_template_src: project.txt
+finger_info_labels: "true"
 
 # Toggles the task that ensures the 'git' package is installed, which is
 # required for cloning the Finger2020 repository.

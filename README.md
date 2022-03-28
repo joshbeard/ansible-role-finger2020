@@ -90,3 +90,10 @@ Toggles the task that ensures the 'git' package is installed, which is
 required for cloning the Finger2020 repository.
 
 Default: `true`
+
+### finger_info_labels
+
+Boolean as a string to toggle showing the 'Project' and 'Plan' labels in
+the response.
+
+Default: `"true"`
